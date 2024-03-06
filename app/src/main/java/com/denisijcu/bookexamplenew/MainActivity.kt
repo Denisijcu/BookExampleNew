@@ -11,13 +11,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.denisijcu.bookexamplenew.examples.chapter1.Greeting
+import com.denisijcu.bookexamplenew.examples.chapter2.BoxLayout
 import com.denisijcu.bookexamplenew.examples.chapter2.DarkModeExample
+import com.denisijcu.bookexamplenew.examples.chapter2.DynamicThemeSwitching
 import com.denisijcu.bookexamplenew.examples.chapter2.DynamicThemeSwitchingExample
 import com.denisijcu.bookexamplenew.examples.chapter2.Greeting2
+import com.denisijcu.bookexamplenew.examples.chapter2.HorizontalRowLayout
+import com.denisijcu.bookexamplenew.examples.chapter2.LayoutBasicPractice
 import com.denisijcu.bookexamplenew.examples.chapter2.MaterialThemeExample
 import com.denisijcu.bookexamplenew.examples.chapter2.StateManage
 import com.denisijcu.bookexamplenew.examples.chapter2.StyledButtonExample
 import com.denisijcu.bookexamplenew.examples.chapter2.StyledTextExample
+import com.denisijcu.bookexamplenew.examples.chapter2.VerticalColumnLayout
+import com.denisijcu.bookexamplenew.examples.chapter2.WeightedColumnLayout
 import com.denisijcu.bookexamplenew.ui.theme.BookExampleNewTheme
 
 class MainActivity : ComponentActivity() {
@@ -44,8 +50,14 @@ class MainActivity : ComponentActivity() {
                          // MaterialThemeExample()   //  Examples #3of  Theming and styles
                          // StyledTextExample()  // Example #4
                          //StyledButtonExample()    // Example #5
-                         //DarkModeExample()    // Example# 6
-                         DynamicThemeSwitchingExample()  // Example #7
+                         //DarkModeExample()               // Example# 6
+                         //DynamicThemeSwitchingExample()  // Example #7
+                         // VerticalColumnLayout()         // Example #8
+                         //  HorizontalRowLayout()         // Example #9
+                         // BoxLayout()                    //Example # 10
+                         //WeightedColumnLayout()
+                         //LayoutBasicPractice()
+                          DynamicThemeSwitching()
 
                 }
             }
