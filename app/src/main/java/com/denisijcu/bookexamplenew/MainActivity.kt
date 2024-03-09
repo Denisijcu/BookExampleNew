@@ -28,6 +28,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.denisijcu.bookexamplenew.examples.chapter1.Greeting
+import com.denisijcu.bookexamplenew.examples.chapter2.AppLayoutAdvancedPractice
 import com.denisijcu.bookexamplenew.examples.chapter2.BoxLayout
 import com.denisijcu.bookexamplenew.examples.chapter2.ConstrainedLayoutExample
 import com.denisijcu.bookexamplenew.examples.chapter2.ConstraintLayoutContent
@@ -38,6 +39,7 @@ import com.denisijcu.bookexamplenew.examples.chapter2.DynamicThemeSwitchingExamp
 import com.denisijcu.bookexamplenew.examples.chapter2.FullSizeBox
 import com.denisijcu.bookexamplenew.examples.chapter2.Greeting2
 import com.denisijcu.bookexamplenew.examples.chapter2.HorizontalRowLayout
+
 import com.denisijcu.bookexamplenew.examples.chapter2.LayoutBasicPractice
 import com.denisijcu.bookexamplenew.examples.chapter2.LimitedSizeBox
 import com.denisijcu.bookexamplenew.examples.chapter2.MaterialThemeExample
@@ -106,8 +108,10 @@ class MainActivity : ComponentActivity() {
                         // ResponsiveRowLayout()
                         //ResponsiveGridLayout()
                         // ResponsiveColumnLayoutExample()
+                         //MyApp()
+                        AppLayoutAdvancedPractice()
 
-                     MyApp()
+
 
 
                 }

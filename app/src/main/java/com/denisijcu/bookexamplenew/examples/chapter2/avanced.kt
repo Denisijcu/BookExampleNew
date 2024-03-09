@@ -1,7 +1,9 @@
 package com.denisijcu.bookexamplenew.examples.chapter2
 
+import android.graphics.fonts.FontStyle
 import android.widget.GridLayout
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -29,6 +31,9 @@ import androidx.constraintlayout.compose.Dimension
 
 import androidx.compose.foundation.layout.*
 
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+
 import androidx.compose.material3.*
 import androidx.compose.material3.CardDefaults.shape
 import androidx.compose.runtime.*
@@ -39,8 +44,10 @@ import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.text.font.FontWeight
 
 import androidx.compose.ui.unit.sp
+import java.time.format.TextStyle
 
 
 /** Examples -/
@@ -404,3 +411,102 @@ fun ResponsiveColumnLayoutExamplePreview() {
 
 }
 
+/* PROJECT ADVANCED LAYOUT */
+
+val homeWindow = """
+Advanced Layout Techniques and Responsive Design
+As your understanding of basic layout components in Jetpack Compose solidifies, it's time to explore advanced techniques for creating responsive and dynamic user interfaces. This section covers handling constraints, applying constraints handling, and achieving a responsive design.
+2.6.1 - Handling Constraints in Jetpack Compose
+In Jetpack Compose, constraints are crucial for creating layouts that adapt to varying screen sizes and orientations. The Modifier class offers a range of constraints-related modifiers to control the size and positioning of composable elements.    
+""".trimIndent()
+
+val layoutWindow = """
+    Type some text here about you have learned in this section
+""".trimIndent()
+
+val summaryWindow = """
+   Mastering advanced layout techniques and responsive design is crucial for building visually appealing and adaptable user interfaces. Whether it's handling constraints, utilizing custom layouts, or ensuring responsiveness, Jetpack Compose empowers developers to create sophisticated UIs that seamlessly adapt to different devices and screen dimensions.
+
+""".trimIndent()
+
+
+@Composable
+fun AppLayoutAdvancedPractice() {
+
+    var content by remember {
+        mutableStateOf(homeWindow)
+    }
+
+    ConstraintLayout(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(6.dp)
+    ) {
+
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color.LightGray)
+                .padding(4.dp)){
+
+                    Row(modifier = Modifier.weight(1f)){
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp)
+                        ) {
+                            Text("Logo", modifier = Modifier
+                                .weight(2f)
+                                .clickable { content = homeWindow }, fontSize = 16.sp)
+                            Text("Home", modifier = Modifier
+                                .weight(1f)
+                                .clickable { content = homeWindow }, fontSize = 12.sp)
+                            Text("Layout", modifier = Modifier
+                                .weight(1f)
+                                .clickable { content = layoutWindow }, fontSize = 12.sp)
+                            Text("Summary", modifier = Modifier
+                                .weight(1f)
+                                .clickable { content = summaryWindow }, fontSize = 12.sp)
+                        }
+                    }
+                    Row(modifier = Modifier.background(Color.Gray).padding(14.dp).weight(4f).verticalScroll(rememberScrollState())) {
+
+                        Text(content, Modifier.background(Color.White).padding(8.dp))
+                    }
+
+                    Row(modifier = Modifier.weight(1f).align(Alignment.End)) {
+                        ConstraintLayout {
+                            // Create references for the composables to constrain
+                            val (button) = createRefs()
+
+                            Button(
+                                onClick = { content = "All Clear" },
+                                // Assign reference "button" to the Button composable
+                                // and constrain it to the top of the ConstraintLayout
+                                modifier = Modifier.constrainAs(button) {
+                                    top.linkTo(parent.top, margin = 16.dp)
+                                }
+                            ) {
+                                Text("Clear", fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                            }
+
+                        }
+                    }
+
+
+                }
+
+
+    }
+
+}
+
+
+
+
+@Preview
+@Composable
+fun AppLayoutAdvancedPracticePreview() {
+    AppLayoutAdvancedPractice()
+
+}
