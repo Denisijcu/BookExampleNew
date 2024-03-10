@@ -33,7 +33,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-
+import androidx.compose.ui.zIndex
 
 
 /** Examples -/
@@ -416,12 +416,35 @@ val summaryWindow = """
 """.trimIndent()
 
 
+private var isActive:Boolean = false
+
 @Composable
 fun AppLayoutAdvancedPractice() {
 
     var content by remember {
         mutableStateOf(homeWindow)
     }
+
+    var isDrawerBarShow by remember {
+        mutableStateOf(false)
+    }
+    var isSideBarShow by remember {
+        mutableStateOf(false)
+    }
+    var isDialogBxShow by remember {
+        mutableStateOf(false)
+    }
+    var isFootBtnShow by remember {
+        mutableStateOf(false)
+    }
+
+    if(isDrawerBarShow) DrawerBar()
+    if(isSideBarShow) SideBar()
+    if(isDialogBxShow) DialogBx()
+    if(isFootBtnShow) FootBtn()
+
+
+
 
     ConstraintLayout(
         modifier = Modifier
@@ -439,41 +462,77 @@ fun AppLayoutAdvancedPractice() {
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(16.dp)
+                                .padding(10.dp)
                         ) {
-                            Text("Logo", modifier = Modifier
-                                .weight(2f)
-                                .clickable { content = homeWindow }, fontSize = 16.sp)
+                            Text("= Logo", modifier = Modifier
+                                .weight(1f)
+                                .clickable {
+                                    isDrawerBarShow = !isDrawerBarShow
+                                    isSideBarShow = false
+                                    isDialogBxShow  = false
+
+
+                                }, fontSize = 18.sp)
                             Text("Home", modifier = Modifier
                                 .weight(1f)
-                                .clickable { content = homeWindow }, fontSize = 12.sp)
+                                .clickable {
+                                    content = homeWindow
+                                    isDialogBxShow = true
+
+                                }, fontSize = 12.sp)
                             Text("Layout", modifier = Modifier
                                 .weight(1f)
                                 .clickable { content = layoutWindow }, fontSize = 12.sp)
                             Text("Summary", modifier = Modifier
                                 .weight(1f)
                                 .clickable { content = summaryWindow }, fontSize = 12.sp)
+                            Text("...", modifier = Modifier
+                                .weight(1f)
+                                .clickable {
+                                    isSideBarShow = !isSideBarShow
+                                    isDrawerBarShow = false
+                                    isDialogBxShow  = false
+
+
+                                }, fontSize = 12.sp)
                         }
                     }
-                    Row(modifier = Modifier.background(Color.Gray).padding(14.dp).weight(4f).verticalScroll(rememberScrollState())) {
+                    Row(modifier = Modifier
+                        .background(Color.Gray)
+                        .padding(14.dp)
+                        .weight(4f)
+                        .verticalScroll(rememberScrollState())) {
 
-                        Text(content, Modifier.background(Color.White).padding(8.dp))
+                        Text(content,
+                            Modifier
+                                .background(Color.White)
+                                .padding(8.dp))
+
+
                     }
 
-                    Row(modifier = Modifier.weight(1f).align(Alignment.End)) {
+                    Row(modifier = Modifier
+                        .weight(1f)
+                        .align(Alignment.End)) {
                         ConstraintLayout {
                             // Create references for the composables to constrain
                             val (button) = createRefs()
 
                             Button(
-                                onClick = { content = "All Clear" },
+                                onClick = {
+                                    content = "All Clear $isDialogBxShow"
+                                          isFootBtnShow = !isFootBtnShow
+                                          isDialogBxShow = false
+                                          isDrawerBarShow = false
+                                          isSideBarShow = false
+                                          },
                                 // Assign reference "button" to the Button composable
                                 // and constrain it to the top of the ConstraintLayout
                                 modifier = Modifier.constrainAs(button) {
                                     top.linkTo(parent.top, margin = 16.dp)
                                 }
                             ) {
-                                Text("Clear", fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                                Text("=", fontSize = 18.sp, fontWeight = FontWeight.Bold)
                             }
 
                         }
@@ -487,7 +546,183 @@ fun AppLayoutAdvancedPractice() {
 
 }
 
+@Composable
+fun DrawerBar() {
+    var show by remember {
+        mutableStateOf(true)
+    }
+    if (show) Column(
+        horizontalAlignment = Alignment.Start,
+        verticalArrangement = Arrangement.Top,
+        modifier= Modifier
+            .padding(4.dp)
+            .zIndex(1f)
+            .height(100.dp),
 
+
+
+    ) {
+        // Utiliza el modificador offset para posicionar el cuadro en (10.dp, 50.dp)
+        Box(
+            modifier = Modifier
+                .absoluteOffset(x = 2.dp, y = 40.dp)
+                .background(Color.White)
+                .padding(0.dp)
+                .size(220.dp, 350.dp)
+
+
+        ) {
+            // Contenido del cuadro
+            Column(Modifier.padding(6.dp)) {
+                Button(onClick = {
+                    show = false
+
+                }) {
+                    Text(text = "X")
+                }
+                Text("Item 1")
+                Text("Item 2")
+
+
+            }
+
+        }
+    }
+}
+@Composable
+fun SideBar(){
+
+    var bx by remember {
+        mutableStateOf(true)
+    }
+
+    if(bx){
+    Column(
+        horizontalAlignment = Alignment.End,
+        verticalArrangement = Arrangement.Top,
+        modifier= Modifier
+            .padding(16.dp)
+            .zIndex(1f)
+            .height(100.dp),
+
+
+
+        ) {
+        // Utiliza el modificador offset para posicionar el cuadro en (10.dp, 50.dp)
+        Box(
+            modifier = Modifier
+                .absoluteOffset(x = 80.dp, y = 50.dp)
+                .background(Color.White)
+                .padding(8.dp)
+                .size(220.dp, 350.dp)
+
+
+        ) {
+            // Contenido del cuadro
+            Column(Modifier.padding(6.dp)) {
+                Text("Item 1")
+                Text("Item 2")
+                Button(onClick = {
+                    bx = false
+
+                }) {
+                     Text(text = "X")
+                }
+            }
+
+        }
+     }
+    }
+}
+
+@Composable
+fun DialogBx() {
+
+    var show by remember {
+        mutableStateOf(true)
+    }
+
+    if (show) Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier
+                .padding(16.dp)
+                .zIndex(1f)
+                .height(100.dp),
+
+
+            ) {
+            // Utiliza el modificador offset para posicionar el cuadro en (10.dp, 50.dp)
+            Box(
+                modifier = Modifier
+                    .background(Color.Magenta)
+                    .padding(8.dp)
+                    .size(150.dp, 250.dp)
+
+
+            ) {
+                // Contenido del cuadro
+                Column(Modifier.padding(6.dp)) {
+                    Text("Item 1")
+                    Text("Item 2")
+
+                    Button(onClick = {
+                        show = false
+                    }) {
+                        Text("X")
+
+                    }
+
+                }
+            }
+        }
+}
+
+
+
+@Composable
+fun FootBtn() {
+
+    var show by remember {
+        mutableStateOf(true)
+    }
+
+    if (show) Column(
+        horizontalAlignment = Alignment.End,
+        verticalArrangement = Arrangement.Bottom,
+        modifier = Modifier
+            .padding(4.dp,120.dp)
+            .zIndex(1f)
+            .height(200.dp),
+
+
+        ) {
+        // Utiliza el modificador offset para posicionar el cuadro en (10.dp, 50.dp)
+        Box(
+            modifier = Modifier
+                .background(Color.Cyan)
+              //  .absoluteOffset(x = 2.dp, y = 40.dp)
+                .padding(8.dp)
+                .size(80.dp, 200.dp)
+
+
+        ) {
+            // Contenido del cuadro
+            Column(Modifier.padding(6.dp)) {
+                Text("Item 1")
+                Text("Item 2")
+
+                Button(onClick = {
+                    show = false
+                }) {
+                    Text("X")
+
+                }
+
+            }
+        }
+    }
+}
 
 
 @Preview
