@@ -36,18 +36,23 @@ import com.denisijcu.bookexamplenew.examples.chapter2.CustomConstraintsHandlingE
 import com.denisijcu.bookexamplenew.examples.chapter2.DarkModeExample
 import com.denisijcu.bookexamplenew.examples.chapter2.DynamicThemeSwitching
 import com.denisijcu.bookexamplenew.examples.chapter2.DynamicThemeSwitchingExample
+import com.denisijcu.bookexamplenew.examples.chapter2.FadeInAnimation
 import com.denisijcu.bookexamplenew.examples.chapter2.FullSizeBox
 import com.denisijcu.bookexamplenew.examples.chapter2.Greeting2
 import com.denisijcu.bookexamplenew.examples.chapter2.HorizontalRowLayout
+import com.denisijcu.bookexamplenew.examples.chapter2.KeyframeAnimation
 
 import com.denisijcu.bookexamplenew.examples.chapter2.LayoutBasicPractice
 import com.denisijcu.bookexamplenew.examples.chapter2.LimitedSizeBox
 import com.denisijcu.bookexamplenew.examples.chapter2.MaterialThemeExample
+import com.denisijcu.bookexamplenew.examples.chapter2.MovingElement
+import com.denisijcu.bookexamplenew.examples.chapter2.MovingTextAnimation
 import com.denisijcu.bookexamplenew.examples.chapter2.ResponsiveColumnLayout
 import com.denisijcu.bookexamplenew.examples.chapter2.ResponsiveColumnLayoutExample
 import com.denisijcu.bookexamplenew.examples.chapter2.ResponsiveConstraintHandlingExample
 import com.denisijcu.bookexamplenew.examples.chapter2.ResponsiveGridLayout
 import com.denisijcu.bookexamplenew.examples.chapter2.ResponsiveRowLayout
+import com.denisijcu.bookexamplenew.examples.chapter2.ScaleAnimationOnClick
 import com.denisijcu.bookexamplenew.examples.chapter2.StateManage
 import com.denisijcu.bookexamplenew.examples.chapter2.StyledButtonExample
 import com.denisijcu.bookexamplenew.examples.chapter2.StyledTextExample
@@ -62,7 +67,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
 
-            val windowSizeClass = calculateWindowSizeClass(this)
+           // val windowSizeClass = calculateWindowSizeClass(this)
 
             BookExampleNewTheme {
                 // A surface container using the 'background' color from the theme
@@ -109,7 +114,16 @@ class MainActivity : ComponentActivity() {
                         //ResponsiveGridLayout()
                         // ResponsiveColumnLayoutExample()
                          //MyApp()
-                        AppLayoutAdvancedPractice()
+                        //AppLayoutAdvancedPractice()
+
+                           /* Animations   */
+                         //FadeInAnimation()
+                         //ScaleAnimationOnClick()
+                          //KeyframeAnimation()
+                          MovingElement()
+                         // MovingTextAnimation()
+
+
 
 
 
