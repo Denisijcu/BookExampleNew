@@ -154,20 +154,28 @@ fun MyText(text: String) {
 @Composable
 fun MyTextField(value: String) {
     Column(modifier = Modifier.padding(16.dp)) {
-        var name by remember { mutableStateOf(value) }
-        if (name.isNotEmpty()) {
+
+        var name by remember {
+            mutableStateOf("")
+        }
+        if (name.isNotEmpty()){
             Text(
-                text = "Hello, $name!",
+                text = "Hello! $name",
                 modifier = Modifier.padding(bottom = 8.dp),
                 style = MaterialTheme.typography.bodyMedium
             )
+            OutlinedTextField(
+                value = name,
+                onValueChange = { name = it},
+                label = { Text("Name") }
+            )
         }
-        OutlinedTextField(
-            value = name,
-            onValueChange = { name = it },
-            label = { Text("Name") }
-        )
+        Button(onClick = { name = "Denis" }) {
+            Text("click me")
+        }
+
     }
+
 
 }
 

@@ -33,13 +33,9 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
-import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
-import androidx.compose.material3.windowsizeclass.WindowHeightSizeClass
-import androidx.compose.material3.windowsizeclass.WindowSizeClass
-import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
-import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
+
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
+
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -92,8 +88,11 @@ import com.denisijcu.bookexamplenew.examples.chapter2.StyledTextExample
 import com.denisijcu.bookexamplenew.examples.chapter2.VerticalColumnLayout
 import com.denisijcu.bookexamplenew.examples.chapter2.WeightedColumnLayout
 import com.denisijcu.bookexamplenew.examples.chapter3.CustomStyledButton
+import com.denisijcu.bookexamplenew.examples.chapter3.HelloContent
 import com.denisijcu.bookexamplenew.examples.chapter3.MyAppContent
+import com.denisijcu.bookexamplenew.examples.chapter3.MyTextField
 import com.denisijcu.bookexamplenew.examples.chapter3.MyUserInterface
+import com.denisijcu.bookexamplenew.examples.chapter3.NavGraph
 import com.denisijcu.bookexamplenew.ui.theme.BookExampleNewTheme
 import com.denisijcu.bookexamplenew.ui.*
 import com.denisijcu.bookexamplenew.ui.theme.MyTheme
@@ -102,17 +101,18 @@ import kotlinx.coroutines.handleCoroutineException
 
 class MainActivity : ComponentActivity() {
 
-    @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
 
            // val windowSizeClass = calculateWindowSizeClass(this)
 
-            MyTheme {
+            BookExampleNewTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
                    // color = myBg
                 ) {
 
@@ -172,8 +172,9 @@ class MainActivity : ComponentActivity() {
                           // CustomStyledButton()
                           //MyUserInterface()
 
-                         MyAppContent()
-
+                         //MyAppContent()
+                         //HelloContent()
+                          NavGraph()
 
 
 
