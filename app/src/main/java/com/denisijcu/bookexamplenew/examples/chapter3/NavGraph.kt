@@ -1,5 +1,10 @@
 package com.denisijcu.bookexamplenew.examples.chapter3
 
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -19,10 +24,6 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.denisijcu.bookexamplenew.examples.chapter2.DetailsScreen
-import com.denisijcu.bookexamplenew.examples.chapter2.HomeScreen
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
 
 @Composable
 fun NavGraph() {
@@ -34,16 +35,48 @@ fun NavGraph() {
 
         composable("login") { LoginScreen3(navController) }
 
-        composable("home/{userName}") { backStackEntry ->
-            val userName= backStackEntry.arguments?.getString("userName")
+        composable("home/{userName}",
+            enterTransition = {
+                slideInHorizontally(
+                    initialOffsetX = { -1000 },
+                    animationSpec = tween(durationMillis = 1000)
+                ) + fadeIn(initialAlpha = 0.3f)
+            },
+            exitTransition = {
+                slideOutHorizontally(
+                    targetOffsetX = { -1000 },
+                    animationSpec = tween(durationMillis = 1000)
+                ) + fadeOut(targetAlpha = 0.3f)
+            }
+
+        ) { backStackEntry ->
+            val userName= backStackEntry.arguments?.getString("userName",)
             HomeScreenChapter3(navController, userName.orEmpty())
         }
-        composable("detailsChapter3/{userName}") { backStackEntry ->
+        composable("detailsChapter3/{userName}",
+
+            enterTransition = {
+                slideInHorizontally(
+                    initialOffsetX = { -1000 },
+                    animationSpec = tween(durationMillis = 1000)
+                ) + fadeIn(initialAlpha = 0.4f)
+            },
+            exitTransition = {
+                slideOutHorizontally(
+                    targetOffsetX = { -1000 },
+                    animationSpec = tween(durationMillis = 1000)
+                ) + fadeOut(targetAlpha = 0.4f)
+            }
+
+
+            ) { backStackEntry ->
             val userName= backStackEntry.arguments?.getString("userName")
             DetailsScreenChapter3( userName.orEmpty())
         }        // Add more destinations as needed
     }
 }
+
+
 
 @Composable
 fun HomeScreenChapter3(navController: NavController, userName: String) {
