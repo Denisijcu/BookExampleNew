@@ -8,7 +8,7 @@ val T1 = Color(0xFF673AB7)
 
 
 
-
+val myBg = Color(0xFFFFFFFF)
 
 
 val P2 = Color(0xFF8A7538)

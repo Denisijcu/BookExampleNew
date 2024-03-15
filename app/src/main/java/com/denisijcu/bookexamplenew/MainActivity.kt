@@ -91,8 +91,13 @@ import com.denisijcu.bookexamplenew.examples.chapter2.StyledButtonExample
 import com.denisijcu.bookexamplenew.examples.chapter2.StyledTextExample
 import com.denisijcu.bookexamplenew.examples.chapter2.VerticalColumnLayout
 import com.denisijcu.bookexamplenew.examples.chapter2.WeightedColumnLayout
+import com.denisijcu.bookexamplenew.examples.chapter3.CustomStyledButton
+import com.denisijcu.bookexamplenew.examples.chapter3.MyAppContent
+import com.denisijcu.bookexamplenew.examples.chapter3.MyUserInterface
 import com.denisijcu.bookexamplenew.ui.theme.BookExampleNewTheme
 import com.denisijcu.bookexamplenew.ui.*
+import com.denisijcu.bookexamplenew.ui.theme.MyTheme
+import com.denisijcu.bookexamplenew.ui.theme.myBg
 import kotlinx.coroutines.handleCoroutineException
 
 class MainActivity : ComponentActivity() {
@@ -104,11 +109,11 @@ class MainActivity : ComponentActivity() {
 
            // val windowSizeClass = calculateWindowSizeClass(this)
 
-            BookExampleNewTheme {
+            MyTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = Color.Green
+                   // color = myBg
                 ) {
 
 
@@ -142,24 +147,32 @@ class MainActivity : ComponentActivity() {
                           // LimitedSizeBox()
                           //ConstraintLayoutContent()
                           //ConstrainedLayoutExample()
-                         //ResponsiveConstraintHandlingExample()
-                         //CustomConstraintsHandlingExample()
-                        // ResponsiveColumnLayout()
-                        // ResponsiveRowLayout()
-                        //ResponsiveGridLayout()
-                        // ResponsiveColumnLayoutExample()
-                         //MyApp()
-                        //AppLayoutAdvancedPractice()
+                          //ResponsiveConstraintHandlingExample()
+                          //CustomConstraintsHandlingExample()
+                          // ResponsiveColumnLayout()
+                          // ResponsiveRowLayout()
+                          //ResponsiveGridLayout()
+                          // ResponsiveColumnLayoutExample()
+                          //MyApp()
+                          //AppLayoutAdvancedPractice()
 
                            /* Animations   */
-                         // FadeInAnimation()
-                         // ScaleAnimationOnClick()
-                         // KeyframeAnimation()
-                         // MovingElement()
-                         // MovingTextAnimation()
-                         // Project //
-                        // AppAnimationPractice()
-                        Navigation()
+                           // FadeInAnimation()
+                           // ScaleAnimationOnClick()
+                           // KeyframeAnimation()
+                           // MovingElement()
+                           // MovingTextAnimation()
+                           // Project //
+                           // AppAnimationPractice()
+                           //Navigation()
+
+
+                           /* Chapter # 3 */
+
+                          // CustomStyledButton()
+                          //MyUserInterface()
+
+                         MyAppContent()
 
 
 

@@ -72,6 +72,7 @@ dependencies {
     // to use constraint
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
+
     implementation("androidx.compose.ui:ui:1.6.3")
     implementation("androidx.compose.material:material:1.6.3")
     implementation("androidx.compose.ui:ui-tooling:1.6.3")
