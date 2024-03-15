@@ -87,12 +87,16 @@ import com.denisijcu.bookexamplenew.examples.chapter2.StyledButtonExample
 import com.denisijcu.bookexamplenew.examples.chapter2.StyledTextExample
 import com.denisijcu.bookexamplenew.examples.chapter2.VerticalColumnLayout
 import com.denisijcu.bookexamplenew.examples.chapter2.WeightedColumnLayout
+import com.denisijcu.bookexamplenew.examples.chapter3.ClickableComponent
 import com.denisijcu.bookexamplenew.examples.chapter3.CustomStyledButton
+import com.denisijcu.bookexamplenew.examples.chapter3.DraggableBox
+import com.denisijcu.bookexamplenew.examples.chapter3.GestureDetectionComponent
 import com.denisijcu.bookexamplenew.examples.chapter3.HelloContent
 import com.denisijcu.bookexamplenew.examples.chapter3.MyAppContent
 import com.denisijcu.bookexamplenew.examples.chapter3.MyTextField
 import com.denisijcu.bookexamplenew.examples.chapter3.MyUserInterface
 import com.denisijcu.bookexamplenew.examples.chapter3.NavGraph
+import com.denisijcu.bookexamplenew.examples.chapter3.TextInputComponent
 import com.denisijcu.bookexamplenew.ui.theme.BookExampleNewTheme
 import com.denisijcu.bookexamplenew.ui.*
 import com.denisijcu.bookexamplenew.ui.theme.MyTheme
@@ -174,8 +178,12 @@ class MainActivity : ComponentActivity() {
 
                          //MyAppContent()
                          //HelloContent()
-                          NavGraph()
+                         // NavGraph()
+                         //ClickableComponent()
 
+                         //TextInputComponent()
+                         //GestureDetectionComponent()
+                         DraggableBox()
 
 
 
