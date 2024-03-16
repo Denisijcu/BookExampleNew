@@ -79,6 +79,8 @@ dependencies {
     implementation("androidx.compose.material3:material3")
 
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
+    implementation("io.coil-kt:coil-compose:2.4.0")
+
 
 
     testImplementation("junit:junit:4.13.2")

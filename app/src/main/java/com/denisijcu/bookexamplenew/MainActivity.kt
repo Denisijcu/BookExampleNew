@@ -97,6 +97,7 @@ import com.denisijcu.bookexamplenew.examples.chapter3.GestureDetectionComponent
 import com.denisijcu.bookexamplenew.examples.chapter3.GridItemSpanExample
 import com.denisijcu.bookexamplenew.examples.chapter3.HelloContent
 import com.denisijcu.bookexamplenew.examples.chapter3.LazyGridMultipleElements_Avoid
+
 import com.denisijcu.bookexamplenew.examples.chapter3.MyAppContent
 import com.denisijcu.bookexamplenew.examples.chapter3.MyTextField
 import com.denisijcu.bookexamplenew.examples.chapter3.MyUserInterface
@@ -106,6 +107,7 @@ import com.denisijcu.bookexamplenew.examples.chapter3.ResponsiveConstraintLayout
 import com.denisijcu.bookexamplenew.examples.chapter3.SliderAdvancedExample
 import com.denisijcu.bookexamplenew.examples.chapter3.TextInputComponent
 import com.denisijcu.bookexamplenew.examples.chapter3.TicTacToeGame
+import com.denisijcu.bookexamplenew.examples.chapter3.VerticalGridExample
 import com.denisijcu.bookexamplenew.ui.theme.BookExampleNewTheme
 import com.denisijcu.bookexamplenew.ui.*
 import com.denisijcu.bookexamplenew.ui.theme.MyTheme
@@ -201,7 +203,9 @@ class MainActivity : ComponentActivity() {
                     //GridItemSpanExample()
                    // LazyGridMultipleElements_Avoid()
                    // CustomGridExample()
-                    ResponsiveConstraintLayout()
+                    //ResponsiveConstraintLayout()
+                    VerticalGridExample()
+
 
 
 
