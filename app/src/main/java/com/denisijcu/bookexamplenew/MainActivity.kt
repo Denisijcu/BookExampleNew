@@ -99,12 +99,16 @@ import com.denisijcu.bookexamplenew.examples.chapter3.HelloContent
 import com.denisijcu.bookexamplenew.examples.chapter3.LazyGridMultipleElements_Avoid
 
 import com.denisijcu.bookexamplenew.examples.chapter3.MyAppContent
+import com.denisijcu.bookexamplenew.examples.chapter3.MyBottom
 import com.denisijcu.bookexamplenew.examples.chapter3.MyTextField
 import com.denisijcu.bookexamplenew.examples.chapter3.MyUserInterface
 import com.denisijcu.bookexamplenew.examples.chapter3.NavGraph
 import com.denisijcu.bookexamplenew.examples.chapter3.RangeSliderExample
 import com.denisijcu.bookexamplenew.examples.chapter3.ResponsiveConstraintLayout
 import com.denisijcu.bookexamplenew.examples.chapter3.SliderAdvancedExample
+import com.denisijcu.bookexamplenew.examples.chapter3.TestingCustomButton
+import com.denisijcu.bookexamplenew.examples.chapter3.TestingElevatedCard
+import com.denisijcu.bookexamplenew.examples.chapter3.TestingPersonalizedCard
 import com.denisijcu.bookexamplenew.examples.chapter3.TextInputComponent
 import com.denisijcu.bookexamplenew.examples.chapter3.TicTacToeGame
 import com.denisijcu.bookexamplenew.examples.chapter3.VerticalGridExample
@@ -185,29 +189,31 @@ class MainActivity : ComponentActivity() {
                            /* Chapter # 3 */
 
                           // CustomStyledButton()
-                          //MyUserInterface()
+                          // MyUserInterface()
 
-                         //MyAppContent()
-                         //HelloContent()
+                         // MyAppContent()
+                         // HelloContent()
                          // NavGraph()
-                         //ClickableComponent()
+                         // ClickableComponent()
 
-                         //TextInputComponent()
-                         //GestureDetectionComponent()
-                         //DraggableBox()
-                         //TicTacToeGame()
-                         //ConstraintLayoutExample()
-                  //  val list = listOf("A","B","C")
-                   // FlexboxLayoutExample(list)
-                   // RangeSliderExample()
-                    //GridItemSpanExample()
-                   // LazyGridMultipleElements_Avoid()
-                   // CustomGridExample()
-                    //ResponsiveConstraintLayout()
-                    VerticalGridExample()
+                         // TextInputComponent()
+                         // GestureDetectionComponent()
+                         // DraggableBox()
+                         // TicTacToeGame()
+                         // ConstraintLayoutExample()
+                         // val list = listOf("A","B","C")
+                         // FlexboxLayoutExample(list)
+                         // RangeSliderExample()
+                         // GridItemSpanExample()
+                         // LazyGridMultipleElements_Avoid()
+                         // CustomGridExample()
+                         // ResponsiveConstraintLayout()
+                         // VerticalGridExample()
+                         // MyBottom()
 
-
-
+                         // TestingCustomButton()
+                         //TestingElevatedCard()
+                         TestingPersonalizedCard()
 
 
 
