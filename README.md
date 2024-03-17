@@ -3,4 +3,4 @@ Code Examples
 
 
 
-<img src = "https://drive.google.com/uc?id=1PP_gFppleCo2AXevLpp_xMc8QOI-OC9j" />
+<img src = "app/src/main/res/drawable/ic_mona_lisa.png" />
