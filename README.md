@@ -8,7 +8,7 @@ begin one by one. Don't forget to comment when you finish and do the same with t
 <p> Example</p>
 
   // Example #1
-<p>  
+<p style="margin-left:10px;">  
       // Greeting("Android") 
 </p>
 <p>
