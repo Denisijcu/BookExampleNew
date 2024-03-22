@@ -213,7 +213,7 @@ class MainActivity : ComponentActivity() {
 
                          // TestingCustomButton()
                          //TestingElevatedCard()
-                         TestingPersonalizedCard()
+                         //TestingPersonalizedCard()
 
 
 
