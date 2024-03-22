@@ -15,6 +15,27 @@ begin one by one. Don't forget to comment when you finish and do the same with t
   // Greeting2("Android")
 </p>
 
+<p> To use it just uncomment</p>
+
+<p>  
+   Greeting("Android") 
+</p>
+<p>
+  // Greeting2("Android")
+</p>
+
+<p>Next </p>
+  // Example #1
+<p>  
+  // Greeting("Android") 
+</p>
+<p>
+   Greeting2("Android")
+</p>
+
+<p>and son on</p>
+
+
 
 
 
